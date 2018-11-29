@@ -1,28 +1,6 @@
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.*;
 
-class Edge
-{
-
-	private int vert;
-	private int weight;
-
-	public Edge(int vert, int weight) 
-	{
-	  	 	this.vert = vert;
-	  	 	this.weight = weight;
-	}
-
-	public int getWeight( ) 
-	{
-	     return weight;
-	}
-	public int getVert( ) 
-	{
-	      return vert;
-	}
-}
-
 public class Tests
 {
 	public static void main(String[] args) 
@@ -50,9 +28,9 @@ public class Tests
 				{
 					graph1Dense[i][j] = graph1Dense[j][i];
 				}
-					System.out.print(graph1Dense[i][j]);
+					
 			}
-			System.out.println();
+			
 		}
 
 		int[][] graph2Dense = new int[100][100];
@@ -83,7 +61,7 @@ public class Tests
 			//System.out.println();
 		}
 
-		System.out.println();
+		
 
 		int[][] graph1Sparse = new int[5][5];
 		for(int i = 0;i < 5; i++)
@@ -110,9 +88,9 @@ public class Tests
 				{
 					graph1Sparse[i][j] = graph1Sparse[j][i];
 				}	
-				System.out.print(graph1Sparse[i][j]);
+				
 			}
-			System.out.println();
+			
 		}
 
 		int[][] graph2Sparse = new int[100][100];
@@ -141,9 +119,9 @@ public class Tests
 				{
 					graph2Sparse[i][j] = graph2Sparse[j][i];
 				}	
-				System.out.print(graph2Sparse[i][j]);
+				
 			}
-			System.out.println();
+			
 		}
 
 		ArrayList<Edge>[] list1Dense = (ArrayList<Edge>[])new ArrayList[5]; 
@@ -218,41 +196,6 @@ public class Tests
 			}
 		}
 
-		System.out.println();
 
-		for(int i = 0; i < list1Dense.length;i++)
-		{
-			for(int j = 0; j < list1Dense[i].size();j++)
-			{
-				//System.out.println(i);
-				//System.out.println(j);
-				System.out.print(list1Dense[i].get(j).getWeight());
-			}
-			System.out.println();
-		}
-
-		System.out.println();
-
-		for(int i = 0; i < list1Sparse.length;i++)
-		{
-			for(int j = 0; j < list1Sparse[i].size();j++)
-			{
-				//System.out.println(i);
-				//System.out.println(j);
-				System.out.print(list1Sparse[i].get(j).getWeight());
-			}
-			System.out.println();
-		}
-
-		for(int i = 0; i < list2Sparse.length;i++)
-		{
-			for(int j = 0; j < list2Sparse[i].size();j++)
-			{
-				//System.out.println(i);
-				//System.out.println(j);
-				System.out.print(list2Sparse[i].get(j).getWeight());
-			}
-			System.out.println();
-		}
 	}
 }
