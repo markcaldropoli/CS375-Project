@@ -7,10 +7,10 @@ public class Bellman_Ford {
 		this.V = V;
 		d = new int[V+1];
 	}
-	public void BellmanFord_Matrix(int start, int matrix[][]) {
-		for(int i = 1; i < V; i++) d[i]  = Integer.MAX_VALUE;
+	public int[] BellmanFord_Matrix(int start, int matrix[][]) {
+		Arrays.fill(d, Integer.MAX_VALUE);
 		d[start] = 0;
-		for(int i = 1; i <= V-1; i++) {
+		for(int i = 1; i < V-1; i++) {
 			for(int source = 1; source <= V; source++) {
 				for(int dest = 1; dest <= V; dest++) {
 					if(matrix[source][dest] != Integer.MAX_VALUE) {
@@ -30,15 +30,12 @@ public class Bellman_Ford {
 				}
 			}
 		}
-		for(int i = 1; i <= V; i++) {
-			System.out.println(start + " to " + i + " is " + d[i]);
-		}
+		return d;
 	}
 	public int[] BellmanFord_List(int start, int list) {
-		d = new int[list.size()];
 		Arrays.fill(d, Integer.MAX_VALUE);
 		d[start] = 0;
-		for(int i = 0; i < list.size() - 1; i++) {
+		for(int i = 0; i < V - 1; i++) {
 			for(list<pair of integers> edges : list>) {
 				for(<pair of integers> edge : edges) {
 					if(d[i] + edge.weight < d[edge.end]) {
@@ -47,7 +44,7 @@ public class Bellman_Ford {
 				}
 			}
 		}
-		for(int i = 0; i < list.size() - 1; i++) {
+		for(int i = 0; i < V - 1; i++) {
 			for(list<pair of integers> edges : list>) {
 				for(<pair of integers> edge : edges) {
 					if(d[i] + edge.weight < d[edge.end]) {
