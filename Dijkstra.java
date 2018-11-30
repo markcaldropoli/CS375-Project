@@ -1,5 +1,3 @@
-package project;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -14,9 +12,18 @@ public class Dijkstra {
 	public Dijkstra(int nVertices) {
         this.n = nVertices;
         this.adjList = new LinkedList[n];
+        for(int i = 0; i < n; i++) {
+            adjList[i] = new LinkedList<>();
+        }
     }
 
     public int[] DijkstraAdjList(ArrayList<Edge>[] graph, int start) {
+        for(int i = 0; i < graph.length; i++) {
+            for(int j = 0; j < graph[i].size(); j++) {
+                adjList[i].add(graph[i].get(j));
+            }
+        }
+
         boolean[] spt = new boolean[n];
         int[] paths = new int[n];
 
@@ -25,8 +32,8 @@ public class Dijkstra {
         PriorityQueue<Pair<Integer, Integer>> pq = new PriorityQueue<>(n, new Comparator<Pair<Integer, Integer>>() {
             @Override
             public int compare(Pair<Integer,Integer> p1, Pair<Integer, Integer> p2) {
-                int v1 = p1.getVertex();
-                int v2 = p2.getVertex();
+                int v1 = p1.getKey();
+                int v2 = p2.getKey();
                 return v1-v2;
             }
         });

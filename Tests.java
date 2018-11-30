@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Tests
 {
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		int[][] graph1Dense = new int[5][5];
 
@@ -28,9 +28,9 @@ public class Tests
 				{
 					graph1Dense[i][j] = graph1Dense[j][i];
 				}
-					
+
 			}
-			
+
 		}
 
 		int[][] graph2Dense = new int[100][100];
@@ -61,7 +61,7 @@ public class Tests
 			//System.out.println();
 		}
 
-		
+
 
 		int[][] graph1Sparse = new int[5][5];
 		for(int i = 0;i < 5; i++)
@@ -87,10 +87,10 @@ public class Tests
 				else
 				{
 					graph1Sparse[i][j] = graph1Sparse[j][i];
-				}	
-				
+				}
+
 			}
-			
+
 		}
 
 		int[][] graph2Sparse = new int[100][100];
@@ -109,7 +109,7 @@ public class Tests
 			for(int j = 0; j < 100; j++)
 			{
 				int rand = ThreadLocalRandom.current().nextInt(1, 9 + 1);
-				
+
 				if(count < 100 && graph2Sparse[j][i] == 0)
 				{
 					graph2Sparse[i][j] = rand;
@@ -118,14 +118,14 @@ public class Tests
 				else
 				{
 					graph2Sparse[i][j] = graph2Sparse[j][i];
-				}	
-				
+				}
+
 			}
-			
+
 		}
 
-		ArrayList<Edge>[] list1Dense = (ArrayList<Edge>[])new ArrayList[5]; 
-	
+		ArrayList<Edge>[] list1Dense = (ArrayList<Edge>[])new ArrayList[5];
+
 		for(int i = 0 ;i < 5; i++)
 		{
 			list1Dense[i] = new ArrayList();
@@ -142,8 +142,8 @@ public class Tests
 			}
 		}
 
-		ArrayList<Edge>[] list2Dense = (ArrayList<Edge>[])new ArrayList[5]; 
-	
+		ArrayList<Edge>[] list2Dense = (ArrayList<Edge>[])new ArrayList[5];
+
 		for(int i = 0 ;i < 5; i++)
 		{
 			list2Dense[i] = new ArrayList();
@@ -160,8 +160,8 @@ public class Tests
 			}
 		}
 
-		ArrayList<Edge>[] list1Sparse = (ArrayList<Edge>[])new ArrayList[5]; 
-	
+		ArrayList<Edge>[] list1Sparse = (ArrayList<Edge>[])new ArrayList[5];
+
 		for(int i = 0 ;i < 5; i++)
 		{
 			list1Sparse[i] = new ArrayList();
@@ -178,8 +178,8 @@ public class Tests
 			}
 		}
 
-		ArrayList<Edge>[] list2Sparse = (ArrayList<Edge>[])new ArrayList[100]; 
-	
+		ArrayList<Edge>[] list2Sparse = (ArrayList<Edge>[])new ArrayList[100];
+
 		for(int i = 0 ;i < 100; i++)
 		{
 			list2Sparse[i] = new ArrayList();
