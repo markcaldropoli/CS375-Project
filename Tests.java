@@ -142,16 +142,16 @@ public class Tests
 			}
 		}
 
-		ArrayList<Edge>[] list2Dense = (ArrayList<Edge>[])new ArrayList[5];
+		ArrayList<Edge>[] list2Dense = (ArrayList<Edge>[])new ArrayList[100];
 
-		for(int i = 0 ;i < 5; i++)
+		for(int i = 0 ;i < 100; i++)
 		{
 			list2Dense[i] = new ArrayList();
 		}
 
-		for(int i = 0;i < 5; i++)
+		for(int i = 0;i < 100; i++)
 		{
-			for(int j = 0; j < 5; j++)
+			for(int j = 0; j < 100; j++)
 			{
 				if(graph2Dense[i][j] != 0)
 				{
